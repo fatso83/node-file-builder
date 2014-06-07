@@ -1,6 +1,6 @@
 {
   "name": "file-builder",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A concatenation tool ripped from the insides of PrePros.",
   "main": "index.js",
   "scripts": {
