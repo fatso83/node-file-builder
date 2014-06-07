@@ -13,8 +13,15 @@ the hopes that it needs the needs of others souls out there.
 This will produce `big.js`
 `
 var builder = require('file-builder');
-var options = '{customOut : 'big.js'};
-builder.compile('app.js', options, callback);
+var options = '{customOutput : 'big.js'};
+            , fileOptions = {
+                input: 'starting-point.js',
+                config: {},
+                customOutput: 'big.js'
+            }
+            , projectOptions = { path: '.' };
+
+builder.javascript(fileOptions, projectOptions, callback);
 `
 
 Assuming you have the following setup:
@@ -37,13 +44,25 @@ Assuming you have the following setup:
 
 You will end up with the following result in `big.js`
 > PRE
+>
+>
+>
+>
 > console.log('starting point - add stuff pre and post');
+>
 > // This is before post
+>
+>
 > var POST = true;
 
-If not specifying anything the default output filename is ..
+There are some more newlines that what one might expect, but this is
+how Prepros does this, and so any issues with that should be filed
+in the Prepros project.
 
 # About
 The actual file concatenation logic has been ripped from the insides
 of PrePros, so thanks to  @subash for releasing those parts under the MIT
 license.
+
+# Problems? Pull requests?
+File an issue if there are problems. Pull requests are very welcome.

@@ -5,6 +5,5 @@
  * Built using `prepros/build_prepros.sh`
  */
 
-var prepros = {
-    factory: require('angular-to-requirejs-adapter').adapter
-};
+var prepros = require('./angular-to-requirejs-adapter')
+    , _ = require('lodash');
