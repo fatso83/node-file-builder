@@ -1,0 +1,36 @@
+{
+  "name": "file-builder",
+  "version": "0.0.0",
+  "description": "A concatenation tool ripped from the insides of PrePros.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --recursive test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fatso83/node-file-builder.git"
+  },
+  "keywords": [
+    "codekit",
+    "javascript",
+    "prepend",
+    "append",
+    "prepros",
+    "hammer",
+    "concatenate",
+    "topological"
+  ],
+  "author": "Carl-Erik Kopseng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fatso83/node-file-builder/issues"
+  },
+  "homepage": "https://github.com/fatso83/node-file-builder",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.20.1"
+  },
+  "dependencies": {
+    "requirejs": "^2.1.14"
+  }
+}
