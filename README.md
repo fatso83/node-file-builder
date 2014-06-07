@@ -31,18 +31,19 @@ We are just working directly with the innards of Prepros, so if you want
 to know about *all* the different overrides you can look into the `config`
 module of PrePros.
 
-## Javascript prepender/appender
+## Javascript 
 
 ### Appending 
-Use single line comments with @codekit-append or @prepros-append  
-
+Use single line comments with `@codekit-append` or `@prepros-append`  
 Example: `// @codekit-append 'myfile.js'`
 
 ### Prepending
 
-See *Appending* - substitute keywords for @codekit-prepend, @prepros-prepend
+See *Appending* - substitute keywords for `@codekit-prepend`, `@prepros-prepend`
 
-**javascript(fileOptions, projectOptions, callback)**
+### API
+
+`javascript(fileOptions, projectOptions, callback)`
 
 - *fileOptions.input* (compulsory) name of input file
 - fileOptions.config.customOutput Filename of specific outputfile
@@ -52,6 +53,10 @@ See *Appending* - substitute keywords for @codekit-prepend, @prepros-prepend
 - *projectOptions.path* (compulsory) must be set to .
 - callback if the first argument is non-null, an error has occurred. Second argument is name of the input file
 
+## Ruby, SASS, ... 
+
+We are embedding the core of PrePros, so one could do a lot more, but the goal for the first version was to expose the javascript functionality. Feel free to push a PR.
+
 # Notes
 
 There are some more newlines than what one might expect, but this is
@@ -60,7 +65,7 @@ in the Prepros project.
 
 # About
 The actual file concatenation logic has been ripped from the insides
-of PrePros, so thanks to  @subash for releasing those parts under the MIT
+of PrePros, so thanks to [Subash Pratakh](http://github.com/subash)  for releasing those parts under the MIT
 license.
 
 # Problems? Pull requests?
