@@ -10,75 +10,39 @@ the hopes that it meets the needs of other souls out there.
 
 # Getting started
 
-This will produce `big.js`
-
 ```
 var builder = require('file-builder')
             , fileOptions = {
                 input: 'starting-point.js',
-                customOutput: 'big.js'
+                customOutput: '../results/output.js'
             }
             , projectOptions = { path: '.' };
 
 builder.javascript(fileOptions, projectOptions, callback);
 ```
-Assuming you have the following setup:
 
-starting-point.js
-```
-//@codekit-append post.js
-//@codekit-prepend pre.txt
-console.log('starting point - add stuff pre and post');
-```
-
-pre.txt
-
-```
-PRE
-```
-
-post.js
-
-```
-//@codekit-append post.js
-//@codekit-prepend pre.txt
-console.log('starting point - add stuff pre and post');
-```
-
-before-post.js
-
-```
-// This is before post
-```
-
-You will end up with the following result in `big.js`
-
-```
-PRE
-
-
-
-
-console.log('starting point - add stuff pre and post');
-
-// This is before post
-
-
-var POST = true;
-```
-
-There are some more newlines that what one might expect, but this is
-how Prepros does this, and so any issues with that should be filed
-in the Prepros project.
+Assuming we are working with the files in the
+[test/fixtures](https://github.com/fatso83/node-file-builder/tree/master/test/fixtures)
+directory you will end up with
+[test/results/output.js](https://github.com/fatso83/node-file-builder/tree/master/test/results/output.js)
 
 # API notes
 We are just working directly with the innards of Prepros, so if you want
 to know about *all* the different overrides you can look into the `config`
 module of PrePros.
 
-Some quick notes
+## Javascript prepender/appender
 
-## javascript(fileOptions, projectOptions, callback)
+### Appending 
+Use single line comments with @codekit-append or @prepros-append  
+
+Example: `// @codekit-append 'myfile.js'`
+
+### Prepending
+
+See *Appending* - substitute keywords for @codekit-prepend, @prepros-prepend
+
+**javascript(fileOptions, projectOptions, callback)**
 
 - *fileOptions.input* (compulsory) name of input file
 - fileOptions.config.customOutput Filename of specific outputfile
@@ -87,6 +51,12 @@ Some quick notes
 - fileOptions.config.mangle
 - *projectOptions.path* (compulsory) must be set to .
 - callback if the first argument is non-null, an error has occurred. Second argument is name of the input file
+
+# Notes
+
+There are some more newlines than what one might expect, but this is
+how Prepros does this, and so any issues with that should be filed
+in the Prepros project.
 
 # About
 The actual file concatenation logic has been ripped from the insides
