@@ -58,9 +58,12 @@ fi
 
 
 # Build prepros module that can be used from NodeJS
-cat ../prepros-pre.js  > prepros.js
-find Prepros/application/app/scripts/services  -name '*.js' \
-	| xargs cat >> prepros.js
+echo // Built: $(date) > prepros.js
+cat ../prepros-pre.js  >> prepros.js
+find Prepros/application/app/scripts/services  \
+	 Prepros/application/app/scripts/filters   \
+	-name '*.js' \
+| xargs cat >> prepros.js
 cat ../prepros-post.js  >> prepros.js
 
 mv prepros.js  ../../lib/prepros.js

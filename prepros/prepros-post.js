@@ -1,6 +1,4 @@
 
 // Node interface
 
-module.exports = {
-  factory : prepros.factory
-};
+module.exports = prepros;
