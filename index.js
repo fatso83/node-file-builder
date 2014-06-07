@@ -10,6 +10,9 @@ function compileJs(fileOptions, projectOptions, callback) {
     _.extend(defaultProjectConfig, projectOptions.config);
     projectOptions.config = defaultProjectConfig;
 
+    // make fileoptions.config not mandatory
+    fileOptions.config = fileOptions.config || {};
+
     javascriptBuilder.compile(fileOptions, projectOptions, callback);
 }
 

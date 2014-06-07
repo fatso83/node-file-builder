@@ -15,8 +15,7 @@ describe('basic functionality works', function () {
         var inputFilePath = __dirname + '/fixtures/starting-point.js'
             , outputFilePath = __dirname + '/fixtures/min/starting-point.min.js'
             , fileOptions = {
-                input: inputFilePath,
-                config: {}
+                input: inputFilePath
             }
             , projectOptions = { path: '.' };
 
@@ -35,8 +34,6 @@ describe('basic functionality works', function () {
         var outputFilePath = __dirname + '/../.tmp/output.js'
             , fileOptions = {
                 input: __dirname + '/fixtures/starting-point.js',
-                config: {
-                },
                 customOutput: outputFilePath
             }
             , projectOptions = { path: '.' };
