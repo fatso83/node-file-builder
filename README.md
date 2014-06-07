@@ -11,7 +11,8 @@ the hopes that it meets the needs of other souls out there.
 # Getting started
 
 This will produce `big.js`
-`
+
+```
 var builder = require('file-builder')
             , fileOptions = {
                 input: 'starting-point.js',
@@ -20,38 +21,40 @@ var builder = require('file-builder')
             , projectOptions = { path: '.' };
 
 builder.javascript(fileOptions, projectOptions, callback);
-`
-
+```
 Assuming you have the following setup:
 
 starting-point.js
-`
+```
 //@codekit-append post.js
 //@codekit-prepend pre.txt
 console.log('starting point - add stuff pre and post');
-`
+```
 
 pre.txt
 
-`
+```
 PRE
-`
+```
 
 post.js
 
-`
+```
 //@codekit-append post.js
 //@codekit-prepend pre.txt
 console.log('starting point - add stuff pre and post');
-`
+```
 
 before-post.js
 
-`// This is before post`
+```
+// This is before post
+```
 
 You will end up with the following result in `big.js`
 
-`PRE
+```
+PRE
 
 
 
@@ -62,7 +65,7 @@ console.log('starting point - add stuff pre and post');
 
 
 var POST = true;
-`
+```
 
 There are some more newlines that what one might expect, but this is
 how Prepros does this, and so any issues with that should be filed
