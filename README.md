@@ -59,6 +59,22 @@ There are some more newlines that what one might expect, but this is
 how Prepros does this, and so any issues with that should be filed
 in the Prepros project.
 
+# API notes
+We are just working directly with the innards of Prepros, so if you want
+to know about *all* the different overrides you can look into the `config`
+module of PrePros.
+
+Some quick notes
+
+##builder.javascript(fileOptions, projectOptions, callback)
+- *fileOptions.input* (compulsory) name of input file
+- fileOptions.config.customOutput Filename of specific outputfile
+- fileOptions.config.uglify
+- fileOptions.config.sourcemaps
+- fileOptions.config.mangle
+- *projectOptions.config* (compulsory)
+- *projectOptions.path* (compulsory) must be set to .
+
 # About
 The actual file concatenation logic has been ripped from the insides
 of PrePros, so thanks to  @subash for releasing those parts under the MIT
