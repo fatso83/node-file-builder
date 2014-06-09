@@ -47,6 +47,8 @@ pushd "$TMP_DIR" > /dev/null
 if [[ ! -e Prepros ]]; then
 	log Cloning Prepros repo
 	git clone git@github.com:subash/Prepros.git
+        # compatible version
+        git checkout  4dc1df21a58d34d2ad9c675ace9164b61d169d64
 else
 	log Found existing Prepros repo
 fi
